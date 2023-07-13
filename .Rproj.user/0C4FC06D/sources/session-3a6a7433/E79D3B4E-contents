@@ -1,0 +1,16 @@
+# add data for analysis
+twitch_game <- fread("twitch_game_data.csv")
+twitch_global <- fread("twitch_global_data.csv")
+
+# add libraries for analysis
+library("twitch_game")
+library("twitch_global")
+library("ggplot2")
+library("tidyverse")
+
+
+colnames(twitch_game)
+colnames(twitch_global)
+
+ggplot(data = twitch_game) + 
+  geom_point(mapping=aes(x=Peak_viewers, y=Peak_channels, color=Game))
